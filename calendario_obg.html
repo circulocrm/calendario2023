@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        overflow: hidden;
+      }
+      .firstCircle {
+        width: 45vw;
+        height: 45vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(15deg, black, #0c0c0c 70%) padding-box,
+          linear-gradient(
+              211deg,
+              #00e7ff 16.47%,
+              rgba(0, 231, 255, 0.17) 52.32%,
+              rgba(0, 0, 0, 0) 75%
+            )
+            border-box;
+
+        border-radius: 50em;
+        border: 4px solid transparent;
+        flex-direction: column;
+        gap: 3rem;
+        box-shadow: 50px 50px 100px 100px black;
+      }
+      .secondCircle {
+        width: 60vw;
+        height: 60vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(15deg, black, #0c0c0c 90%) padding-box,
+          linear-gradient(
+              270deg,
+              #fe2f36 16.47%,
+              rgba(254, 47, 54, 0.16) 52.32%,
+              rgba(0, 0, 0, 0) 75%
+            )
+            border-box;
+        border-radius: 50em;
+        border: 4px solid transparent;
+        flex-direction: column;
+        box-shadow: 50px 50px 100px 100px black;
+      }
+      .thirtCircle {
+        position: absolute;
+        left: 50%;
+        top: -230px;
+        transform: translateX(-50%);
+        width: 80vw;
+        height: 75vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(15deg, black, #0c0c0c 70%) padding-box,
+          linear-gradient(
+              210deg,
+              #fe2f36 20%,
+              rgba(0, 0, 0, 0.35) 100%,
+              rgba(0, 0, 0, 0) 100%
+            )
+            border-box;
+        border-radius: 50em;
+        border: 4px solid transparent;
+        box-shadow: 1px 1px 100px 1000px black;
+      }
+      .txt {
+        color: white;
+      }
+      .h1_agrad {
+        font-size: 96px;
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 700;
+        line-height: 150px;
+        margin-left: auto;
+        position: relative;
+        left: 65%;
+        transform: translateX(-50%);
+      }
+      .txt_agrad {
+        font-family: "Work Sans";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        text-align: center;
+        letter-spacing: 1px;
+      }
+      .txt_agrad {
+        margin: auto;
+      }
+      p {
+        margin: 0;
+      }
+      .txt_clique {
+        text-decoration: underline;
+        font-size: 35px;
+        cursor: pointer;
+      }
+      @media (max-width: 1200px) {
+        .h1_agrad {
+          font-size: 40px;
+          left: 80%;
+          transform: translateX(-50%);
+        }
+        .txt_agrad {
+          font-size: 2vw;
+          width: 300px;
+        }
+        .thirtCircle {
+          top: 0px;
+        }
+        .txt_clique {
+          font-size: 2.5vw;
+        }
+      }
+      @media (max-width: 750px) {
+        .h1_agrad {
+          font-size: 25px;
+          left:25% ;
+          transform: translateX(0%);
+        }
+        .txt_agrad{
+            position: relative;
+            bottom: 50px;
+            width: 150px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="thirtCircle">
+      <div class="secondCircle">
+        <div class="firstCircle">
+          <div class="txt">
+            <h1 class="h1_agrad">OBRIGADO!</h1>
+            <div class="txt_agrad">
+              O material será baixado em instantes.<br />
+              Caso não ocorra,<br /><a id="downloadLink" href="https://drive.google.com/file/d/12snh2l50m2fDoOEazUrLRkDLZBoH-h9b/view
+              " download class="txt_clique">clique aqui</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var downloadStartTime = setTimeout(function () {
+        document.getElementById("downloadLink").click();
+      }, 4000);
+    </script>
+  </body>
+</html>

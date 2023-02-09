@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: #ffffff;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+
+      body {
+        background: #0f0f0f;
+        min-height: 100vh;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 14px;
+        padding-top: 20px;
+      }
+
+      .line {
+        width: 90%;
+        height: 1px;
+        background: #454545;
+      }
+
+      main {
+        padding-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1280px;
+        gap: 40px;
+      }
+
+      main .left-side,
+      main .right-side {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 40%;
+        align-self: stretch;
+      }
+
+      main .left-side {
+        width: 75%;
+        position: absolute;
+        right: 35vw;
+        top: -100px;
+      }
+
+      main .right-side {
+        position: absolute;
+        left: 50vw;
+      }
+
+      main .left-side h1 {
+        font-size: 5rem;
+        line-height: 2vw;
+        letter-spacing: 0.12vw;
+        padding-bottom: 20px;
+      }
+
+      main .left-side h1 .year {
+        font-size: 7rem;
+        line-height: 2vw;
+        letter-spacing: 0.12vw;
+        padding-bottom: 20px;
+      }
+
+      main .left-side ul {
+        padding-top: 12px;
+      }
+
+      main .right-side form {
+        background: #1e1e1e;
+        border-radius: 30px;
+        padding: 1vw 2vw;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        width: 36rem;
+        height: 42rem;
+        margin-top: 20px;
+      }
+
+      main .right-side form p {
+        font-size: clamp(15px, 1.5rem, 1.4vw);
+        line-height: 25px;
+        padding-bottom: 20px;
+      }
+
+      main .right-side form h3 {
+        padding-bottom: 8px;
+        font-size: clamp(15px, 24px, 1.8vw);
+        line-height: 3.125vw;
+        letter-spacing: 0.14vw;
+      }
+
+      main .right-side form input {
+        width: 100%;
+        padding: 14px 22px;
+        border-radius: 10px;
+        margin-bottom: 12px;
+        font-size: clamp(15px, 24px, 1.2vw);
+        outline: none;
+        border: 0;
+        color: #000000;
+      }
+      main .right-side form input:last-of-type {
+        margin: 0;
+      }
+      main .right-side form label {
+        font-size: clamp(15px, 24px, 1.2vw);
+        line-height: 1.25vw;
+        letter-spacing: 0.1vw;
+        text-transform: uppercase;
+        padding-bottom: 5px;
+      }
+
+      main .right-side form button {
+        margin-top: 25px;
+        color: #ffffff;
+        border: 1px solid #fe2f36;
+        background: #fe2f36;
+        padding: 4px;
+        width: 100%;
+        border-radius: 10px;
+        font-size: clamp(15px, 24px, 1.5vw);
+        line-height: 2.4vw;
+        letter-spacing: 0.1vw;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+      }
+
+      main .right-side form button:hover {
+        background: #fe2f36;
+        color: #1e1e1e;
+      }
+
+      main .right-side form .line {
+        height: 2px;
+        margin-bottom: 10px;
+        margin-top: 2;
+      }
+      .title_reg {
+        font-size: 40px;
+      }
+
+      .firstCircle {
+        width: 713px;
+        height: 721px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(15deg, black, #0c0c0c 70%) padding-box,
+          linear-gradient(
+              380deg,
+              #fe2f36 16.47%,
+              rgba(254, 47, 54, 0.16) 52.32%,
+              rgba(0, 0, 0, 0) 75%
+            )
+            border-box;
+        border-radius: 50em;
+        border: 4px solid transparent;
+        flex-direction: column;
+        gap: 3rem;
+        box-shadow: 50px 50px 100px 100px black;
+      }
+      /* .firstCircle {
+        width: 40rem;
+        height: 40rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(15deg, #0f0f0f, #121212 90%) padding-box,
+          linear-gradient(
+              380deg,
+              #fe2f36 16.47%,
+              rgba(254, 47, 54, 0.16) 52.32%,
+              rgba(0, 0, 0, 0) 75%
+            )
+            border-box;
+        border-radius: 50em;
+        border: 4px solid transparent;
+        flex-direction: column;
+        gap: 3rem;
+      } */
+      .firstCircle h2 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        letter-spacing: 12px;
+      }
+      .span_cal {
+        letter-spacing: 20px;
+      }
+
+      .firstCircle .year {
+        font-size: 15rem;
+        font-weight: bold;
+      }
+      .calendar {
+        display: flex;
+        width: 60%;
+        text-align: center;
+        padding-bottom: 5px;
+      }
+
+      .secondCircle {
+        width: 948px;
+        height: 948px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(15deg, black, #0c0c0c 70%) padding-box,
+          linear-gradient(
+              211deg,
+              #00e7ff 16.47%,
+              rgba(0, 231, 255, 0.17) 52.32%,
+              rgba(0, 0, 0, 0) 75%
+            )
+            border-box;
+        border-radius: 50em;
+        border: 4px solid transparent;
+        flex-direction: column;
+        box-shadow: 50px 50px 100px 100px black;
+      }
+      /* .secondCircle {
+        width: 60rem;
+        height: 60rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(150deg, #0f0f0f, #121212 90%) padding-box,
+          linear-gradient(
+              211deg,
+              #00e7ff 16.47%,
+              rgba(0, 231, 255, 0.17) 52.32%,
+              rgba(0, 0, 0, 0) 75%
+            )
+            border-box;
+        border-radius: 50em;
+        border: 4px solid transparent;
+        flex-direction: column;
+      } */
+      .infoContainer {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+      .infoContainer h2 {
+        font-style: italic;
+        color: gray;
+        font-weight: 100;
+      }
+      .logo_salesforce {
+        width: 13%;
+        margin: auto;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .logo_circulo {
+        width: 40%;
+        position: relative;
+        top: 30px;
+      }
+      .partner {
+        margin-bottom: 12px;
+      }
+
+      .thirtCircle {
+        width: 1173px;
+        height: 1173px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(15deg, black, #0c0c0c 70%) padding-box,
+          linear-gradient(
+              150deg,
+              #f4875f 1.99%,
+              rgba(244, 135, 95, 0.35) 46.02%,
+              rgba(0, 0, 0, 0) 73.87%
+            )
+            border-box;
+        border-radius: 50em;
+        border: 4px solid transparent;
+        box-shadow: 1px 1px 100px 1000px black;
+      }
+      /* .thirtCircle {
+        width: 80rem;
+        height: 80rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(15deg, #0f0f0f, #121212 90%) padding-box,
+          linear-gradient(
+              150deg,
+              #f4875f 1.99%,
+              rgba(244, 135, 95, 0.35) 46.02%,
+              rgba(0, 0, 0, 0) 73.87%
+            )
+            border-box;
+        border-radius: 50em;
+        border: 4px solid transparent;
+      } */
+
+      .fouthCircle {
+        width: 100rem;
+        height: 100rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(150deg, #0f0f0f, #121212 90%) padding-box,
+          linear-gradient(
+              15deg,
+              #fe2f36 16.47%,
+              rgba(254, 47, 54, 0.16) 52.32%,
+              rgba(0, 0, 0, 0) 75%
+            )
+            border-box;
+        border-radius: 50em;
+        border: 4px solid transparent;
+      }
+      @media (min-width: 1201px) {
+        body {
+          overflow: hidden;
+        }
+      }
+      @media (max-width: 1200px) {
+        main {
+          gap: 10px;
+          flex-direction: column;
+        }
+        main .left-side {
+          width: 100%;
+          position: relative;
+          left: 0px;
+          top: 0px;
+        }
+
+        main .right-side {
+          position: relative;
+          left: 0px;
+          width: 100%;
+        }
+        main .left-side ul {
+          padding: 12px;
+        }
+
+        main .right-side form {
+          width: 100%;
+          padding: 20px 14px;
+          height: 33rem;
+          width: 80%;
+        }
+        .infoContainer {
+          margin-bottom: 0;
+        }
+
+        main .right-side form h3 {
+          padding-bottom: 15px;
+        }
+
+        main .right-side form input {
+          margin-bottom: 12px;
+          padding: 9px 18px;
+        }
+        main .right-side form label {
+          padding-bottom: 10px;
+        }
+        main .right-side form button {
+          padding: 10px 4px;
+          margin-top: 10px;
+        }
+        .firstCircle {
+          width: 17rem;
+          height: 17rem;
+          gap: 1rem;
+        }
+        .secondCircle {
+          width: 22rem;
+          height: 22rem;
+        }
+        .thirtCircle {
+          width: 27rem;
+          height: 27rem;
+        }
+        .firstCircle h2 {
+          font-size: 1.5rem;
+        }
+
+        .firstCircle .year {
+          font-size: 4rem;
+          position: relative;
+          top: 10px;
+        }
+        .calendar {
+          width: 45%;
+        }
+        .logo_salesforce {
+          width: 10vw;
+        }
+        .logo_circulo {
+          top: 5px;
+        }
+        .title_reg {
+          font-size: 35px;
+        }
+        .firstCircle h2 {
+          letter-spacing: 1px;
+        }
+        .span_cal {
+          letter-spacing: 1.2px;
+        }
+        .logo_salesforce {
+          position: relative;
+          width: 10vw;
+          bottom: 5px;
+        }
+      }
+      @media (max-width: 800px) {
+        .logo_salesforce {
+          width: 15vw;
+        }
+      }
+      @media (max-width: 425px) {
+        .firstCircle {
+          width: 10rem;
+          height: 10rem;
+          gap: 1rem;
+        }
+        .secondCircle {
+          width: 15rem;
+          height: 15rem;
+        }
+        .thirtCircle {
+          width: 20rem;
+          height: 20rem;
+        }
+        main .right-side form {
+          height: 29rem;
+        }
+        .firstCircle h2 {
+          font-size: 1rem;
+        }
+        .firstCircle .year {
+          font-size: 3rem;
+        }
+        .logo_circulo {
+          top: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="left-side">
+        <div class="thirtCircle">
+          <div class="secondCircle">
+            <div class="infoContainer">
+              <img
+                class="logo_salesforce"
+                src="./logo_salesforce.png"
+                alt="Logo Salesforce"
+              />
+              <div class="partner"></div>
+            </div>
+            <div class="firstCircle">
+              <div class="calendar">
+                <h2>
+                  <span class="span_cal">CALENDÁRIO</span><br />DE MARKETING
+                </h2>
+              </div>
+              <h1 class="year">2023</h1>
+              <img
+                class="logo_circulo"
+                src="logo_circulo.png"
+                alt="logo_circulo"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-side">
+        <h1 class="title_reg">
+          NÃO PERCA AS PRINCIPAIS <br />DATAS COMERCIAIS DO ANO
+        </h1>
+        <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+
+
+          <input type=hidden name="oid" value="00D5e000004hfcw">
+          
+          <input type=hidden name="retURL" value="./calendario_obg.html">
+
+          <h3>MATERIAL 100% GRATUITO</h3>
+          <div class="line"></div>
+          <p>
+            Comece a pensar em estratégias para aplicar durante o ano com o
+            <b>Calendário Comercial da Círculo CRM!</b>
+          </p>
+
+          <label for="first_name">Nome*</label>
+          <input
+            placeholder="Digite seu nome"
+            id="first_name"
+            maxlength="40"
+            name="first_name"
+            size="20"
+            type="text"
+          />
+
+          <label for="email">email corporativo*</label>
+          <input
+            placeholder="Digite seu e-mail"
+            id="email"
+            maxlength="80"
+            name="email"
+            size="20"
+            type="text"
+          />
+
+          <label for="company">empresa*</label>
+          <input
+            placeholder="Digite sua empresa"
+            id="company"
+            maxlength="40"
+            name="company"
+            size="20"
+            type="text"
+          />
+
+          <label for="title">cargo*</label>
+          <input
+            placeholder="Digite seu cargo"
+            id="title"
+            maxlength="40"
+            name="title"
+            size="20"
+            type="text"
+          />
+
+          <input
+            type="hidden"
+            value="calendario"
+            id="00N8W00000P03c0"
+            maxlength="50"
+            name="00N8W00000P03c0"
+            size="20"
+            type="text"
+          />
+
+          <button type="submit" name="submit">
+            RECEBER MATERIAL
+          </button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
